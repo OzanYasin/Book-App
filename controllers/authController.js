@@ -1,12 +1,17 @@
-const register = (req, res) => {
-  res.send('register user');
+import User from '../models/User.js';
+import { StatusCodes } from 'http-status-codes';
+
+const register = async (req, res) => {
+  // Do not need to try catch block due to express-async-errors library
+  const user = await User.create(req.body);
+  res.status(StatusCodes.CREATED).json({ user });
 };
 
-const login = (req, res) => {
+const login = async (req, res) => {
   res.send('login user');
 };
 
-const updateUser = (req, res) => {
+const updateUser = async (req, res) => {
   res.send('updateUser');
 };
 

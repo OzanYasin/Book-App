@@ -2,6 +2,7 @@ import express from 'express';
 const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
+import 'express-async-errors';
 
 // db and authenticateUser
 import connectDB from './db/connect.js';
@@ -17,7 +18,6 @@ import errorHandlerMiddleware from './middleware/error-handler.js';
 app.use(express.json()); // JSON data available to use in the controllers since we'll have post request.
 
 app.get('/', (req, res) => {
-  // throw new Error('error');
   res.send('Welcome!');
 });
 
