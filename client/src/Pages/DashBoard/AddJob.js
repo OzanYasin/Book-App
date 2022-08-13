@@ -1,46 +1,34 @@
-import { FormRow, FormRowSelect } from "../../components";
-import Wrapper from "../../assets/wrappers/DashboardFormPage";
-import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import { FormRow, FormRowSelect } from '../../components';
+import Wrapper from '../../assets/wrappers/DashboardFormPage';
+import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import {
   handleChange,
   clearValues,
   createJob,
   editJob,
-} from "../../features/job/jobSlice";
-import { useEffect } from "react";
-
+} from '../../features/job/jobSlice';
+import { useEffect } from 'react';
 const AddJob = () => {
   const {
     isLoading,
     position,
     company,
     jobLocation,
-    status,
     jobType,
-    statusOptions,
     jobTypeOptions,
+    status,
+    statusOptions,
     isEditing,
     editJobId,
   } = useSelector((store) => store.job);
   const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!isEditing) {
-      dispatch(
-        handleChange({
-          name: "jobLocation",
-          value: user.location,
-        })
-      );
-    }
-  }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!position || !company || !jobLocation) {
-      toast.error("Please Fill Out All Fields");
+      toast.error('Please fill out all fields');
       return;
     }
     if (isEditing) {
@@ -61,42 +49,52 @@ const AddJob = () => {
     dispatch(handleChange({ name, value }));
   };
 
+  useEffect(() => {
+    if (!isEditing) {
+      dispatch(
+        handleChange({
+          name: 'jobLocation',
+          value: user.location,
+        })
+      );
+    }
+  }, []);
+
   return (
     <Wrapper>
       <form className="form">
-        <h3>{isEditing ? "edit book" : "add book"}</h3>
-
+        <h3>{isEditing ? 'edit job' : 'add job'}</h3>
         <div className="form-center">
-          {/*Position*/}
+          {/* position */}
           <FormRow
             type="text"
-            name="Book Name"
+            name="position"
             value={position}
             handleChange={handleJobInput}
           />
-          {/*Company*/}
+          {/* company */}
           <FormRow
             type="text"
-            name="type"
+            name="company"
             value={company}
             handleChange={handleJobInput}
           />
-          {/* joblocation */}
+          {/* jobLocation */}
           <FormRow
             type="text"
-            labelText="Page Number"
             name="jobLocation"
+            labelText="job location"
             value={jobLocation}
             handleChange={handleJobInput}
           />
-          {/* job status */}
+          {/* status */}
           <FormRowSelect
             name="status"
             value={status}
             handleChange={handleJobInput}
             list={statusOptions}
           />
-          {/* job type 
+          {/* job type*/}
           <FormRowSelect
             name="jobType"
             labelText="job type"
@@ -104,8 +102,6 @@ const AddJob = () => {
             handleChange={handleJobInput}
             list={jobTypeOptions}
           />
-          */}
-          {/* btn container */}
           <div className="btn-container">
             <button
               type="button"
@@ -128,5 +124,4 @@ const AddJob = () => {
     </Wrapper>
   );
 };
-
 export default AddJob;
