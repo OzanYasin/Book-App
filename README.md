@@ -32,7 +32,6 @@ MERN Stack project, where users login/register and track their personal readings
   - jsonwebtoken
   - concurrently
   - morgan
-  - mockaroo
   - helmet
   - xss-clean
   - express-mongo-sanitize
