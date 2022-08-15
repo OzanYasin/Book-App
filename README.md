@@ -1,6 +1,7 @@
 # Book App
 
-Book app is an archive application where users can save the books they read and follow their progress.
+MERN Stack project, where users login/register and track their personal readings by adding, editing, and removing single book (a crud app with user authentication). React Hooks, Async/Await, React Router 6, Axios is implemented. JWT used for authentication and authorization. Front-End application (React) connected with Backend application (Express, MongoDB, NodeJS). Finally, we deployed our MERN app on heroku by using CLI.
+
 
 
 **Project in Action [Book-App](https://book-app-v1.herokuapp.com).**
