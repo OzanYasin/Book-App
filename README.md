@@ -1,7 +1,7 @@
 # Book App
 
 Book app is an archive application where users can save the books they read and follow their progress.
-You can reach project with this [link](https://book-app-v1.herokuapp.com)
+You can reach project with this [link](https://book-app-v1.herokuapp.com).
 
 ---
 
