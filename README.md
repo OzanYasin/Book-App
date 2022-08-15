@@ -52,4 +52,4 @@ By doing that, we can use our app on localhost:5000
 
 ### Contributers
 
-Special thanks to my team colleague Cansu Altun for her hard works and motivated personality. 
+Special thanks to my team colleague **Cansu Altun** for her hard works and motivated personality. 
