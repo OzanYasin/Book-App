@@ -1,6 +1,6 @@
 # Book App
 
-MERN Stack project, where users login/register and track their personal readings by adding, editing, and removing single book (a crud app with user authentication). React Hooks, Async/Await, React Router 6, Axios is implemented. Also applied redux-toolkit (thunkAPI) for creating and managing Redux stores, as well as for writing Redux actions and reducers. JWT used for authentication and authorization. Front-End application (React) connected with Backend application (Express, MongoDB, NodeJS). Finally, we deployed our MERN app on heroku by using CLI.
+MERN Stack project, where users login/register and track their personal readings by adding, editing, and removing a single book (a crud app with user authentication). React Hooks, Async/Await, React Router 6, Axios is implemented. Also applied redux-toolkit (thunkAPI) for creating and managing Redux stores, as well as for writing Redux actions and reducers. JWT used for authentication and authorization. Front-End application (React) connected with Backend application (Express, MongoDB, NodeJS). Finally, we deployed our MERN app on heroku by using CLI.
 
 
 
