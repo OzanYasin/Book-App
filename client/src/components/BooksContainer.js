@@ -5,6 +5,9 @@ import Wrapper from '../assets/wrappers/JobsContainer';
 import Loading from './Loading';
 import { getAllBooks } from '../features/allBooks/allBooksSlice';
 import PageBtnContainer from './PageBtnContainer';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const BooksContainer = () => {
   const {
@@ -42,11 +45,13 @@ const BooksContainer = () => {
       <h5>
         {totalBooks} book{books.length > 1 && 's'} found
       </h5>
-      <div className="jobs">
+        <Container className="bookContainer">
+      <Row>
         {books.map((book) => {
-          return <Book key={book._id} {...book} />;
+          return <Col sm={12} md={6} lg={4}><Book key={book._id} {...book} /></Col>
         })}
-      </div>
+      </Row>
+      </Container>
       {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );

@@ -2,6 +2,11 @@ import { FormRow, FormRowSelect } from '.';
 import Wrapper from '../assets/wrappers/SearchContainer';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleChange, clearFilters } from '../features/allBooks/allBooksSlice';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const SearchContainer = () => {
   const { search, searchStatus, searchType, sort, sortOptions, isLoading } =
@@ -21,17 +26,21 @@ const SearchContainer = () => {
 
   return (
     <Wrapper>
-      <form className="form">
+      <Container>
+      <Form className='form'>
         <h4>search form</h4>
-        <div className="form-center">
           {/* search */}
+          <Row>
+            <Col sm>
           <FormRow
             type="text"
             name="search"
             value={search}
             handleChange={handleSearch}
           />
+          </Col>
           {/* status search */}
+          <Col sm>
           <FormRowSelect
             labelText="status"
             name="searchStatus"
@@ -39,7 +48,11 @@ const SearchContainer = () => {
             handleChange={handleSearch}
             list={['all', ...statusOptions]}
           />
+          </Col>
+          </Row>
           {/* type search */}
+          <Row>
+            <Col sm>
           <FormRowSelect
             labelText="type"
             name="searchType"
@@ -47,21 +60,26 @@ const SearchContainer = () => {
             handleChange={handleSearch}
             list={['all', ...bookTypeOptions]}
           />
+          </Col>
+          <Col sm>
           <FormRowSelect
             name="sort"
             value={sort}
             handleChange={handleSearch}
             list={sortOptions}
           />
-          <button
-            className="btn btn-block btn-danger"
+          </Col>
+          <Col sm className="buttonContainer">
+          <Button className='orangeButton'
             disabled={isLoading}
             onClick={handleSubmit}
           >
             clear filters
-          </button>
-        </div>
-      </form>
+          </Button>
+          </Col>
+          </Row>
+      </Form>
+      </Container>
     </Wrapper>
   );
 };

@@ -1,21 +1,15 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
-const FormRow = ({ type, name, value, handleChange, labelText, min }) => {
+
+const FormRow = ({ type, name, value, handleChange, labelText, min}) => {
   return (
-    <div className="form-row">
-      <label htmlFor={name} className="form-label">
+    <Form.Group controlId={name} className="mb-3">
+      <Form.Label>
         {labelText || name}
-      </label>
-      <input
-        id={name}
-        type={type}
-        name={name}
-        value={value}
-        onChange={handleChange}
-        className="form-input"
-        min={min}
-      />
-    </div>
+      </Form.Label>
+      <Form.Control type={type} name={name} value={value} onChange={handleChange} min={min} className="formRowColor"/>
+    </Form.Group>
   );
 };
 

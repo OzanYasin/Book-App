@@ -1,16 +1,21 @@
 import React from "react";
-import main from "../assets/images/landing.png";
+import main from "../assets/images/landing.svg";
 import Wrapper from "../assets/wrappers/LandingPage";
 //Every time we'll set up component , import wrapper from folder.
 import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const Landing = () => {
   return (
-    <Wrapper>
-      <div className="container page">
+    <Wrapper className="full-page">
         {/*info */}
-        <div className="info">
+        <Container>
+          <Row>
+          <Col>
           <h1>
-            Book<span> Tracking </span>App
+            Book<span> App </span>
           </h1>
           <p>
             Book app is an app where people save the books they read. Thanks to
@@ -18,12 +23,15 @@ const Landing = () => {
             Retrospectively, people can track their progress. Come on, Enjoy the
             app by registering!
           </p>
-          <Link to="/register" className="btn btn-hero">
+          <Link to="/register" className="btn orangeButton">
             Login/Register
           </Link>
-        </div>
+          </Col>
+            <Col>
         <img src={main} alt="books" className="img main-img" />
-      </div>
+        </Col>
+        </Row>
+        </Container>
     </Wrapper>
   );
 };

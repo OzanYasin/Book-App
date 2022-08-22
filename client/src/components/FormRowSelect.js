@@ -1,17 +1,15 @@
 import React from "react";
+import Form from 'react-bootstrap/Form';
 
 const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
   return (
-    <div className="form-row">
-      <label htmlFor={name} className="form-label">
-        {labelText || name}
-      </label>
-      <select
+    <Form.Group controlId={name} className="mb-3"> 
+      <Form.Label>{labelText || name}</Form.Label>
+      <Form.Select
+        className="formRowColor"
         name={name}
-        id={name}
         value={value}
         onChange={handleChange}
-        className="form-select"
       >
         {list.map((itemValue, index) => {
           return (
@@ -20,8 +18,8 @@ const FormRowSelect = ({ labelText, name, value, handleChange, list }) => {
             </option>
           );
         })}
-      </select>
-    </div>
+      </Form.Select>
+    </Form.Group>
   );
 };
 

@@ -3,33 +3,21 @@ import styled from "styled-components";
 const Wrapper = styled.section`
   display: grid;
   align-items: center;
-  .logo {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 1.38rem;
-  }
   .form {
-    max-width: 400px;
-    border-top: 5px solid var(--primary-500);
+    max-width: 30rem;
+    width: 95%;
+    border-top: 5px solid #E07A5F;
+    margin: auto;
   }
-
-  h3 {
-    text-align: center;
+  .orangeButton {
+    width: 100%;
+    margin: 1rem 0;
   }
-  p {
-    margin: 0;
-    margin-top: 1rem;
-    text-align: center;
+  #tab-tab-signup {
+    color: black;
   }
-  .btn {
-    margin-top: 1rem;
-  }
-  .member-btn {
-    background: transparent;
-    border: transparent;
-    color: var(--button);
-    cursor: pointer;
-    letter-spacing: var(--letterSpacing);
+  #tab-tab-login {
+    color: black;
   }
 `;
 export default Wrapper;
