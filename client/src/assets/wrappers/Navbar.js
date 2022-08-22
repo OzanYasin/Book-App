@@ -1,84 +1,73 @@
 import styled from "styled-components";
 
 const Wrapper = styled.nav`
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
-  .logo {
-    display: flex;
-    align-items: center;
-    width: 100px;
-  }
-  .nav-center {
-    display: flex;
-    width: 90vw;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .toggle-btn {
-    background: transparent;
-    border-color: transparent;
-    font-size: 1.75rem;
-    color: var(--button);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  background: var(--white);
-  .btn-container {
-    position: relative;
-  }
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0 0.5rem;
-    position: relative;
-    box-shadow: var(--shadow-2);
-  }
-
-  .dropdown {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    background: var(--primary-100);
-    box-shadow: var(--shadow-2);
-    padding: 0.5rem;
-    text-align: center;
-    visibility: hidden;
-    border-radius: var(--borderRadius);
-  }
-  .show-dropdown {
-    visibility: visible;
-  }
-  .dropdown-btn {
-    background: transparent;
-    border-color: transparent;
-    color: var(--primary-500);
-    letter-spacing: var(--letterSpacing);
-    text-transform: capitalize;
-    cursor: pointer;
-  }
-  .logo-text {
-    display: none;
-    margin: 0;
-  }
-  @media (min-width: 992px) {
-    position: sticky;
-    top: 0;
-
-    .nav-center {
-      width: 90%;
+    .navbar {
+        background-color: #F2CC8F;
+        box-shadow: var(--shadow-1);
+        transition: 0.3s ease-in-out all;
     }
-    .logo {
-      display: none;
+    .navbar:hover {
+        box-shadow: var(--shadow-2);
     }
-    .logo-text {
-      display: block;
+    .nav-links {
+        flex-grow: 1;
+        justify-content: space-evenly;
+        font-weight: 600;
+        font-size: larger;
     }
-  }
+    .navLinks {
+        justify-content: center;
+    }
+    .buttons {
+        flex-grow: 0;
+    }
+    .nav-link {
+        text-transform: capitalize;
+        width: 150px;
+    }
+    .icon {
+        margin-right: 0.4rem;
+        position: relative;
+        bottom: 2px;
+      }
+    span {
+        font-weight: 400;
+        font-size: larger;
+        padding-left: 0.6rem;
+    }
+    .dropdownButton .orangeButton {
+        padding: 0.2rem 0;
+        width: 10rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .logoutButton {
+        display: none !important;
+        padding: 8px 12px;
+    }
+      @media (max-width: 991px) {
+        .dropdownButton {
+            display: none;
+        }
+        .logoutButton {
+            display: flex !important;
+            justify-content: center;
+        }
+        .logoutButton .btn {
+            min-width: 8rem;
+        }
+        .collapse:not(.show) {
+            display: none !important;
+        }
+        .nav-link {
+            width: 128px;
+        }
+      }
+      @media (max-width: 428px) {
+        .nav-link {
+            width: fit-content;
+        }
+      }
 `;
 export default Wrapper;

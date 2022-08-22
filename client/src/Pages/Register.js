@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterPage';
 import { toast } from 'react-toastify';
 import { registerUser, loginUser } from '../features/user/userSlice';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 const initialState = {
   name: '',
@@ -55,55 +59,71 @@ function Register() {
 
   return (
     <Wrapper className="full-page">
-      <form className="form" onSubmit={onSubmit}>
-        <Logo />
-        <h3>{values.isMember ? 'Login' : 'Register'}</h3>
-        {/* name */}
-        {!values.isMember && (
-          <FormRow
-            type="text"
-            name="name"
-            value={values.name}
-            handleChange={handleChange}
-          />
-        )}
-        {/* email */}
-        <FormRow
-          type="email"
-          name="email"
-          value={values.email}
-          handleChange={handleChange}
-        />
-        {/* password */}
-        <FormRow
-          type="password"
-          name="password"
-          value={values.password}
-          handleChange={handleChange}
-        />
-        <button type="submit" className="btn btn-block" disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'submit'}
-        </button>
-        {/* <button
-          type="button"
-          className="btn btn-block btn-hipster"
-          disabled={isLoading}
-          onClick={() =>
-            dispatch(
-              loginUser({ email: 'testUser@test.com', password: 'secret' })
-            )
-          }
+      <Form className="form" onSubmit={onSubmit}>
+        <Tabs
+          defaultActiveKey="login"
+          id="tab"
+          onSelect={toggleMember}
+          className="mb-3"
+          fill
         >
-          {isLoading ? 'Loading...' : 'demo app'}
-        </button> */}
-        <p>
-          {values.isMember ? 'Not a member yet?' : 'Already a member?'}
-          <button type="button" onClick={toggleMember} className="member-btn">
-            {values.isMember ? 'Register' : 'Login'}
-          </button>
-        </p>
-      </form>
-    </Wrapper>
+          <Tab eventKey="login" title="Login" disabled={values.isMember && true}>
+            {!values.isMember && (
+              <FormRow
+                type="text"
+                name="name"
+                value={values.name}
+                handleChange={handleChange}
+              />
+            )}
+            {/* email */}
+            <FormRow
+              type="email"
+              name="email"
+              value={values.email}
+              handleChange={handleChange}
+            />
+            {/* password */}
+            <FormRow
+              type="password"
+              name="password"
+              value={values.password}
+              handleChange={handleChange}
+            />
+            <Button className='orangeButton' type="submit" disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'submit'}
+            </Button>
+          </Tab>
+          <Tab eventKey="signup" title="Signup" disabled={!values.isMember && true}>
+            {!values.isMember && (
+              <FormRow
+                type="text"
+                name="name"
+                value={values.name}
+                handleChange={handleChange}
+              />
+            )}
+            {/* email */}
+            <FormRow
+              type="email"
+              name="email"
+              value={values.email}
+              handleChange={handleChange}
+            />
+            {/* password */}
+            <FormRow
+              type="password"
+              name="password"
+              value={values.password}
+              handleChange={handleChange}
+            />
+            <Button className='orangeButton' type="submit" disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'submit'}
+            </Button>
+          </Tab>
+        </Tabs>
+      </Form>
+    </Wrapper >
   );
 }
 

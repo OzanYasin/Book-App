@@ -1,6 +1,10 @@
 import { FormRow, FormRowSelect } from '../../components';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useSelector, useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { toast } from 'react-toastify';
 import {
   handleChange,
@@ -8,6 +12,7 @@ import {
   createBook,
   editBook,
 } from '../../features/book/bookSlice';
+import Container from 'react-bootstrap/esm/Container';
 const AddBook = () => {
   const {
     isLoading,
@@ -51,9 +56,9 @@ const AddBook = () => {
 
   return (
     <Wrapper>
-      <form className="form">
-        <h3>{isEditing ? 'edit book' : 'add book'}</h3>
-        <div className="form-center">
+      <Container>
+        <Form className="form">
+          <h3>{isEditing ? 'edit book' : 'add book'}</h3>
           {/* bookAuthor */}
           <FormRow
             type="text"
@@ -94,25 +99,21 @@ const AddBook = () => {
             handleChange={handleBookInput}
             list={bookTypeOptions}
           />
-          <div className="btn-container">
-            <button
-              type="button"
-              className="btn btn-block clear-btn"
-              onClick={() => dispatch(clearValues())}
-            >
-              clear
-            </button>
-            <button
-              type="submit"
-              className="btn btn-block submit-btn"
-              onClick={handleSubmit}
-              disabled={isLoading}
-            >
-              submit
-            </button>
-          </div>
-        </div>
-      </form>
+          <Row>
+            <Col>
+              <Button
+                type="submit" className='greenButton' onClick={handleSubmit} disabled={isLoading}>
+                submit
+              </Button>
+            </Col>
+            <Col>
+              <Button type="button" className='orangeButton' onClick={() => dispatch(clearValues())}>
+                clear
+              </Button>
+            </Col>
+          </Row>
+        </Form>
+      </Container>
     </Wrapper>
   );
 };

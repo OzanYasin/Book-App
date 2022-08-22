@@ -5,6 +5,11 @@ import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { updateUser } from '../../features/user/userSlice';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Profile = () => {
   const { isLoading, user } = useSelector((store) => store.user);
@@ -34,9 +39,9 @@ const Profile = () => {
 
   return (
     <Wrapper>
-      <form className="form" onSubmit={handleSubmit}>
-        <h3>profile</h3>
-        <div className="form-center">
+      <Container>
+        <Form onSubmit={handleSubmit} className="form">
+          <h3>profile</h3>
           {/* Name */}
           <FormRow
             type="text"
@@ -66,11 +71,13 @@ const Profile = () => {
             value={userData.location}
             handleChange={handleChange}
           />
-          <button type="submit" className="btn btn-block" disabled={isLoading}>
-            {isLoading ? 'Pleas Wait...' : 'Save Changes'}
-          </button>
-        </div>
-      </form>
+          <Row>
+              <Button className='orangeButton' type="submit" disabled={isLoading}>
+                {isLoading ? 'Pleas Wait...' : 'Save Changes'}
+              </Button>
+          </Row>
+        </Form>
+      </Container>
     </Wrapper>
   );
 };

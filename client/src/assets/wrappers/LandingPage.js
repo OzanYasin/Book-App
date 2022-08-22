@@ -1,41 +1,29 @@
 import styled from "styled-components";
 
 const Wrapper = styled.main`
-  nav {
-    width: var(--fluid-width);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    height: var(--nav-height);
+  display: grid;
+  align-items: center;
+  .col:first-of-type {
     display: flex;
-    align-items: center;
-  }
-  .page {
-    min-height: calc(115vh - var(--nav-height));
-    display: grid;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    flex-direction: column;
   }
   h1 {
+    font-family: "Rubik", sans-serif;
     font-weight: 700;
     span {
-      color: var(--button);
+      color: #E07A5F;
     }
   }
   p {
-    color: var(--grey-600);
-    font-size: 20px;
+    font-size: larger;
   }
-  .main-img {
-    display: none;
+  .orangeButton {
+    color: white;
   }
-  @media (min-width: 992px) {
-    .page {
-      grid-template-columns: 1fr 1fr;
-      column-gap: 3rem;
-    }
-    .main-img {
-      display: block;
+  @media (max-width: 992px) {
+    .col:nth-of-type(2) {
+      display: none;
     }
   }
 `;
