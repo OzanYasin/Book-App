@@ -14,6 +14,7 @@ MERN Stack project, where users login/register and track their personal readings
   - React-Router@6 
   - React-Redux-Toolkit
   - Axios
+  - React-Bootstrap
   - Styled Components
   - normalize.css 
   - React-Toastify
