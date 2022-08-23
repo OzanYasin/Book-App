@@ -1,9 +1,7 @@
-import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
 import Wrapper from '../assets/wrappers/PageBtnContainer';
 import { useSelector, useDispatch } from 'react-redux';
 import { changePage } from '../features/allBooks/allBooksSlice';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Pagination from 'react-bootstrap/Pagination';
 
 const PageBtnContainer = () => {
   const { numOfPages, page } = useSelector((store) => store.allBooks);
@@ -31,27 +29,21 @@ const PageBtnContainer = () => {
 
   return (
     <Wrapper>
-      <Button className="orangeButton" onClick={prevPage}>
-        <HiChevronDoubleLeft />
-        prev
-      </Button>
-      <ButtonGroup>
+      <Pagination size="lg">
+        <Pagination.Prev onClick={prevPage} />
         {pages.map((pageNum) => {
           return (
-            <Button
-              className={pageNum === page ? 'orangeButton active' : 'orangeButton'}
+            <Pagination.Item
+              className={pageNum === page ? 'active' : ''}
               key={pageNum}
               onClick={() => dispatch(changePage(pageNum))}
             >
               {pageNum}
-            </Button>
+            </Pagination.Item>
           );
         })}
-      </ButtonGroup>
-      <Button className="orangeButton" onClick={nextPage}>
-        next
-        <HiChevronDoubleRight />
-      </Button>
+        <Pagination.Next onClick={nextPage} />
+      </Pagination>
     </Wrapper>
   );
 };

@@ -1,12 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  height: 6rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: end;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
+  .page-link {
+    border-radius: 0;
+  }
 `;
 export default Wrapper;
