@@ -4,7 +4,7 @@ MERN Stack project, where users login/register and track their personal readings
 
 
 
-**Project in Action [Book-App](https://book-app-v1.herokuapp.com).**
+**Project in Action [Book-App](https://book-app-kodluyoruz.herokuapp.com).**
 
 ---
 
