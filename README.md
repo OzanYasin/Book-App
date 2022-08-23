@@ -1,10 +1,10 @@
-# Book App
+# [Book App](https://book-app-kodluyoruz.herokuapp.com)
 
-MERN Stack project, where users login/register and track their personal readings by adding, editing, and removing a single book (a crud app with user authentication). React Hooks, Async/Await, React Router 6, Axios is implemented. Also applied redux-toolkit (thunkAPI) for creating and managing Redux stores, as well as for writing Redux actions and reducers. JWT used for authentication and authorization. Front-End application (React) connected with Backend application (Express, MongoDB, NodeJS). Finally, we deployed our MERN app on heroku by using CLI.
+That repo contains a **MERN Stack** project, where users login/register and track their personal readings by adding, editing, and removing a single book (a crud app with user authentication). We utilized hooks to harness the power of React. In addition, We used react-router@6 to switch between pages client side. We entegrated **styled-components** and **bootstrap** libraries to style our application. We implemented **redux-toolkit** (thunkAPI) as contextAPI alternative for creating and managing Redux stores, as well as for writing Redux actions and reducers. Our Front-End application (**React**) is connected with a Backend application **(Express, MongoDB, NodeJS)**. We used **JWT** for authentication and authorization. Finally, we deployed our MERN app on **heroku** by using CLI, and published API Documents on **SwaggerUI**.
 
+### Project in Action: [Book-App](https://book-app-kodluyoruz.herokuapp.com)
 
-
-**Project in Action [Book-App](https://book-app-kodluyoruz.herokuapp.com).**
+### API Documentation [Book-App API](https://app.swaggerhub.com/apis-docs/OzanYasin/book-app-kodluyoruz-API/1.0)
 
 ---
 
@@ -54,4 +54,5 @@ By doing that, app can be reached on localhost:5000
 
 ### Contributers
 
-Thanks to my team colleague **Cansu Altun** for her contributive and motivated personality. 
+Thanks to my team colleague **Cansu Altun** for her contributive and motivated personality.
+Moreover, special thanks to dear **Arda Arslan** for his contributions due to designing our application.
